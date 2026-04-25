@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qmdblack"
+version = "0.1.0"
+description = "Format Python code blocks in Quarto Markdown (.qmd) files using Black"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Audun Askblaker", email = "audun@askblaker.com" }]
+keywords = ["quarto", "black", "formatter", "qmd"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+    "black>=24.0",
+    "click>=8.0",
+]
+
+[project.scripts]
+qmdblack = "qmdblack.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/qmdblack"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.4",
+    "black>=24.0",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
