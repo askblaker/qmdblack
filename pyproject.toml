@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "qmdblack"
-version = "0.1.1"
+version = "0.2.0"
 description = "Format Python code blocks in Quarto Markdown (.qmd) files using Black"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -23,7 +23,7 @@ classifiers = [
     "Topic :: Software Development :: Quality Assurance",
 ]
 dependencies = [
-    "black>=24.0",
+    "black>=22.1",
     "click>=8.0",
 ]
 
